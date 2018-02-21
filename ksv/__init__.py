@@ -4,4 +4,4 @@
 
 __author__ = """Dave Parfitt"""
 __email__ = 'dparfitt@mozilla.com'
-__version__ = '0.1.3'
+__version__ = '0.1.4'
