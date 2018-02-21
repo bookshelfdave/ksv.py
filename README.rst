@@ -18,6 +18,7 @@ Installation
 ::
 
     pip install ksv
+    # or pip3, ksv requires Python 3
 
 Usage
 -----
