@@ -2,13 +2,12 @@
 
 """Main module."""
 
-import yaml
 import base64
 from collections import OrderedDict
+import sys
+import yaml
 
 # https://stackoverflow.com/questions/16782112/can-pyyaml-dump-dict-items-in-non-alphabetical-order
-
-
 def represent_ordereddict(dumper, data):
     value = []
 
@@ -24,6 +23,8 @@ def represent_ordereddict(dumper, data):
 def show_yaml(fin, encode):
     yaml.add_representer(dict, represent_ordereddict)
     y = yaml.load(fin)
+    if 'data' not in y:
+        sys.exit('File does not appear to be a valid secrets file.')
     data_node = y['data']
     for k in data_node:
         v = data_node[k]
