@@ -57,3 +57,11 @@ class TestKsv(unittest.TestCase):
             cli.main, ['--encode'], input=DECODED_SECRET)
         assert encode_result.exit_code == 0
         assert 'MWYyZDFlMmU2N2Rm' in encode_result.output
+
+    def test_invalid_secret(self):
+        """Test invalid secret"""
+        runner = CliRunner()
+        encode_result = runner.invoke(
+            cli.main, input="foo: bar")
+        assert encode_result.exit_code == 1
+
