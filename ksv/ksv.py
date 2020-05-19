@@ -22,7 +22,7 @@ def represent_ordereddict(dumper, data):
 
 def show_yaml(fin, encode):
     yaml.add_representer(dict, represent_ordereddict)
-    y = yaml.load(fin)
+    y = yaml.safe_load(fin)
     if 'data' not in y:
         sys.exit('File does not appear to be a valid secrets file.')
     data_node = y['data']
