@@ -1,7 +1,8 @@
 ksv
 ===
 
- decodes/encodes entire Kubernetes secrets files
+ksv decodes/encodes entire Kubernetes secrets files.
+
 
 -  Free software: Apache Software License 2.0
 
